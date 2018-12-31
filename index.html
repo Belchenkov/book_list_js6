@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MyBookList App</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <style>
+        html, body {
+            background-image: url("./img/tiny-squares.png");
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="display-4 text-center">
+            <i class="fas fa-book-open text-primary"></i> My<span class="text-primary">Book</span>List</h1>
+        <form id="book-form">
+            <div class="form-group">
+                <label for="title" class=" font-weight-bold">
+                    <i class="fas fa-book"></i> Title</label>
+                <input type="text" id="title" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="author" class=" font-weight-bold">
+                    <i class="fas fa-user-edit"></i> Author</label>
+                <input type="text" id="author" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="isbn" class=" font-weight-bold">ISBN#</label>
+                <input type="text" id="isbn" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block font-weight-bold">
+                <i class="fas fa-plus-circle"></i> Add Book
+            </button>
+        </form>
+        <table class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-book"></i> Title</th>
+                    <th><i class="fas fa-user-edit"> Author</th>
+                    <th>ISBN#</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="book-list"></tbody>
+        </table>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
