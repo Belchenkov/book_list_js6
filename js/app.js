@@ -37,11 +37,17 @@ class UI {
             <td>${book.author}</td>
             <td>${book.isbn}</td>
             <td>
-                <a href="#" class="delete text-danger">
-                    <i class="fas fa-trash-alt"></i>
+                <a href="#" class="text-danger">
+                    <i class="delete fas fa-trash-alt"></i>
                 </a></td>
         `;
         list.appendChild(row);
+    }
+
+    static deleteBook(el) {
+        if (el.classList.contains('delete')) {
+            el.parentElement.parentElement.parentElement.remove();
+        }
     }
 
     // Clear Fields
@@ -71,7 +77,11 @@ document.querySelector('#book-form').addEventListener('submit', e => {
    // Add Book To UI
     UI.addBookToList(book);
 
-
+    // Clear Fields
+    UI.clearFields();
 });
 
 // Event: Remove a Book
+document.querySelector('#book-list').addEventListener('click', e => {
+    UI.deleteBook(e.target);
+});
